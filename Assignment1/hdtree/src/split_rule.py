@@ -2103,15 +2103,13 @@ class LogisticRegressionDoubleCategorySplit(AbstractNumericalSplit, TwoAttribute
         state = self.get_state()
         if state is not None:
             attr_name_1, attr_name_2 = self.get_split_attribute_names()
-
-            return f"{attr_name_1} < " \
-                   f"{attr_name_2}"
+            return f"Logistic Regression using {attr_name_1} and {attr_name_2}"
         else:
             return "Smaller than split not initialized"
 
     def get_edge_labels(self):
         attr_name_1, attr_name_2 = self.get_split_attribute_names()
-        return [f"{attr_name_1} < {attr_name_2}", f"{attr_name_1} ≥ {attr_name_2}"]
+        return [f"sigmoid <= 0.5", f"sigmoid > 0.5"]
 
     def explain_split(self, sample: np.ndarray, *args, **kwargs):
         state = self.get_state()
