@@ -29,7 +29,7 @@ import pandas as pd
 from sklearn.metrics import accuracy_score
 
 
-class AbstractHDTree(ABC):
+class AbstractHDTree():
     def __init__(self,
                  allowed_splits: typing.List[typing.Type[AbstractSplitRule]],
                  information_measure: AbstractInformationMeasure,

@@ -21,7 +21,7 @@ import numpy as np
 from collections import Counter
 
 
-class AbstractInformationMeasure(ABC):
+class AbstractInformationMeasure():
     """
     Represents a real valued function [0..1]
     that represents the value of the nodes

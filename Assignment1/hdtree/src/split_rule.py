@@ -54,7 +54,7 @@ def check_initialized(f: typing.Callable, *args, **kwargs):
     return check
 
 
-class AbstractSplitRule(ABC):
+class AbstractSplitRule():
     """
     Represents one specific way
     a node may be split into child nodes
