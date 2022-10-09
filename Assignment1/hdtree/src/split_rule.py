@@ -690,6 +690,8 @@ class TwoAttributeSplitMixin(AbstractSplitRule):
         node_data = node.get_data()
         data_indices = node.get_data_indices()
         supported_cols = self._get_attribute_candidates()
+        supported_cols = [i for i in supported_cols if i != node_data.shape[1] - 1]
+
 
         if len(supported_cols) < 2:
             return None
